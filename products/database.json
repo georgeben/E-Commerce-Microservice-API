@@ -1,0 +1,11 @@
+{
+	"dev": {
+		"ENV": "DEV_DB"
+	},
+	"test": {
+		"ENV": "TEST_DB"
+	},
+	"prod": {
+		"ENV": "PROD_DB"
+	}
+}
