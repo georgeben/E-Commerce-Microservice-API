@@ -29,6 +29,12 @@ You should see
 ### API documentation
 View the API docs [here](https://documenter.getpostman.com/view/5935573/Szmk1bGQ)
 
+### Running tests
+- `cd` into a s service directory e.g `cd products`
+- Create a .env file
+- Create a TEST_DB variable that points to your test database (Necessary for integration tests)
+- Run `npm test` to run test.
+
 ### Author 
 George Kurobara Benjamin
 Built with 🍹 and 🎶
