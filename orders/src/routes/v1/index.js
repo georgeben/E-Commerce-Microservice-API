@@ -14,7 +14,7 @@ router.get('/orders', (req, res) => {
 });
 
 router.post('/orders', validator(makeOrder), checkAuth('authorized'), ordersController('makeOrder'));
-router.put('/orders', validator(cancelOrder), checkAuth('authorized'), ordersController('cancelOrder'));
+router.put('/orders/cancel', validator(cancelOrder), checkAuth('authorized'), ordersController('cancelOrder'));
 
 
 module.exports = router;
