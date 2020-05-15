@@ -13,6 +13,16 @@
       ],
       "program": "${workspaceFolder}/products/src/index.js",
       "console": "integratedTerminal"
+    },
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "Launch User service",
+      "skipFiles": [
+        "<node_internals>/**"
+      ],
+      "program": "${workspaceFolder}/users/src/index.js",
+      "console": "integratedTerminal"
     }
   ]
 }
