@@ -6,7 +6,7 @@ const { makeOrder, cancelOrder } = require('../../schema/orders.schema');
 
 const router = Router();
 
-router.get('/', (req, res) => {
+router.get('/orders', (req, res) => {
   const message = 'E-Commerce Orders service';
   return res.status(200).json({
     message,

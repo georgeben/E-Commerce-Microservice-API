@@ -26,6 +26,16 @@ services:
     environment: 
       - DEV_DB=postgres://postgres:hello@db:5432/
       - PRODUCT_SERVICE_URL=http://products:3000
+  orders:
+    build: "./orders"
+    ports: 
+      - "3003:3000"
+    depends_on: 
+      - db
+    environment: 
+      - DEV_DB=postgres://postgres:hello@db:5432/
+      - PRODUCT_SERVICE_URL=http://products:3000
+      - USER_SERVICE_URL=http://users:3000
   nginx:
     image: nginx:latest
     ports:
@@ -36,3 +46,4 @@ services:
     depends_on:
       - products
       - users
+      - orders
