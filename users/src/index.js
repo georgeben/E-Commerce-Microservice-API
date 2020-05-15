@@ -1,10 +1,10 @@
 const app = require('./app');
 const logger = require('./util/logger');
 
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 3001;
 
 const server = app.listen(PORT, () => {
-  logger.info(`Info: Server started on port ${PORT}`);
+  logger.info(`Info: User service started on port ${PORT}`);
 });
 
 function gracefulShutdown() {
