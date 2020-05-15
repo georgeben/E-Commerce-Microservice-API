@@ -1,6 +1,8 @@
 # E-Commerce-Microservice-API
 An E-Commerce API built using the microservice layered architecture.
 
+![API Architecture](images/architecture.png)
+
 ### Technologies 🛠
 - Javascript 🦂- A high level programming language.
 - Node.js :zap: - As an asynchronous event-driven JavaScript runtime, Node.js is designed to build scalable network applications.
