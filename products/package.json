@@ -4,9 +4,11 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "NODE_ENV=test nyc --reporter=text --reporter=html mocha \"./tests/**/*.spec.js\" --timeout=20000 --exit",
     "start": "node node_modules/db-migrate/bin/db-migrate up --config database.json -e dev && node src/index.js",
-    "migrate:up": "db-migrate up --config database.json -e dev"
+    "migrate:up": "db-migrate up --config database.json -e dev",
+    "migrate-test:up": "db-migrate up --config database.json -e test",
+    "migrate-test:down": "node node_modules/db-migrate/bin/db-migrate reset --config database.json -e test"
   },
   "keywords": [],
   "author": "George Kurobara Benjamin",
@@ -25,12 +27,18 @@
     "helmet": "^3.22.0",
     "http-status": "^1.4.2",
     "morgan": "^1.10.0",
+    "node-cmd": "^3.0.0",
     "pg-promise": "^10.5.5",
     "winston": "^3.2.1"
   },
   "devDependencies": {
+    "chai": "^4.2.0",
+    "chai-as-promised": "^7.1.1",
     "eslint": "^7.0.0",
     "eslint-config-airbnb-base": "^14.1.0",
-    "eslint-plugin-import": "^2.20.2"
+    "eslint-plugin-import": "^2.20.2",
+    "mocha": "^7.1.2",
+    "nyc": "^15.0.1",
+    "supertest": "^4.0.2"
   }
 }

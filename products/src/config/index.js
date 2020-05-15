@@ -15,7 +15,7 @@ module.exports = function () {
     case 'test':
       return {
         DB_URL: process.env.TEST_DB,
-        LOG_FORMAT: 'combined',
+        LOG_FORMAT: 'dev',
       };
     default:
       return {
