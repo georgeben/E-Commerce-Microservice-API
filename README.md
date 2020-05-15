@@ -22,7 +22,7 @@ To get detailed information about the project. Read the [technical spec](https:/
 - Access the API on `http://localhost:8080` :zap:
 
 ### API documentation
-View the API docs [here](https://google.com)
+View the API docs [here](https://documenter.getpostman.com/view/5935573/Szmk1bGQ)
 
 ### Author 
 George Kurobara Benjamin
