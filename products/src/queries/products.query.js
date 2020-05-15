@@ -11,7 +11,7 @@ module.exports = {
   `,
   getProductById: `
     SELECT 
-          products.*, product_categories.name
+          products.*, product_categories.name as category_name
       FROM 
           products
       INNER JOIN
@@ -32,5 +32,19 @@ module.exports = {
       image_url
     ) VALUES ($1, $2, $3, $4, $5, $6)
     RETURNING *
+  `,
+  getAllCategories: `
+    SELECT
+        *
+    FROM
+        product_categories
+  `,
+  getCategory: `
+      SELECT
+          *
+      FROM
+          product_categories
+      WHERE
+          id = $1
   `,
 };

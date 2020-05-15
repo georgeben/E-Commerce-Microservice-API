@@ -46,6 +46,29 @@ function createProductController({ productsService }) {
         return next(error);
       }
     },
+    getAllCategories: async (req, res, next) => {
+      try {
+        const categories = await productsService.getAllCategories();
+        return res.status(status.OK).json({
+          message: 'Successfully fetched product categories',
+          data: categories,
+        });
+      } catch (error) {
+        return next(error);
+      }
+    },
+    getCategory: async (req, res, next) => {
+      const { id } = req.params;
+      try {
+        const category = await productsService.getCategory(id);
+        return res.status(status.OK).json({
+          message: 'Successfully fetched product categories',
+          data: category,
+        });
+      } catch (error) {
+        return next(error);
+      }
+    },
   };
 }
 

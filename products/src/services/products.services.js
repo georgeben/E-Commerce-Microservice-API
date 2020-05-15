@@ -23,6 +23,16 @@ class ProductsService {
     );
     return createdProduct;
   }
+
+  async getAllCategories() {
+    const categories = await this.db.any(queries.getAllCategories);
+    return categories;
+  }
+
+  async getCategory(id) {
+    const category = await this.db.oneOrNone(queries.getCategory, [id]);
+    return category;
+  }
 }
 
 module.exports = ProductsService;

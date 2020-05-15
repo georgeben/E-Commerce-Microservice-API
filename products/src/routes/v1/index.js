@@ -13,6 +13,8 @@ router.get('/', (req, res) => {
 });
 
 router.get('/products', productsController('getAllProducts'));
+router.get('/products/categories', productsController('getAllCategories'));
+router.get('/products/categories/:id', productsController('getCategory'));
 router.get('/products/:id', productsController('getProduct'));
 router.post('/products', validator(createProduct, 'body'), productsController('createProduct'));
 

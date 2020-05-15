@@ -4,7 +4,7 @@ const logger = require('./util/logger');
 const PORT = process.env.PORT || 3000;
 
 const server = app.listen(PORT, () => {
-  logger.info(`Info: Server started on port ${PORT}`);
+  logger.info(`Info: Product service started on port ${PORT}`);
 });
 
 function gracefulShutdown() {
