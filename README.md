@@ -17,7 +17,7 @@ An E-Commerce API built using the microservice layered architecture.
 To get detailed information about the project. Read the [technical spec](https://docs.google.com/document/d/1t7YJjE6XvJiSVJBB21uKI7QaO5-j2KCg1DeLgAICtDA/edit?usp=sharing)
 
 ### Setup Instructions
-- Install the technologies required in the technologies section.
+- Make sure you have docker installed.
 - Clone this repository.
 - `cd` into the repository
 - Run `docker-compose up` (Make sure you have a strong internet connection, LOL)
