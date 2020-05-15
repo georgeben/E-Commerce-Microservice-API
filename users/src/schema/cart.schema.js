@@ -6,6 +6,11 @@ const addToCart = Joi.object({
   quantity: Joi.number().integer().required(),
 });
 
+const checkForId = Joi.object({
+  id: Joi.number().integer().required(),
+});
+
 module.exports = {
   addToCart,
+  checkForId,
 };

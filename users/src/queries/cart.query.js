@@ -11,7 +11,7 @@ module.exports = {
   `,
   getUserCart: `
     SELECT
-        *
+        cart.*, products.name as product_name, products.price as product_price
     FROM 
         cart
     INNER JOIN
@@ -19,5 +19,13 @@ module.exports = {
     ON
         cart.product_id = products.id
     WHERE user_id = $1
+  `,
+  removeItemFromCart: `
+    DELETE FROM
+        cart
+    WHERE
+        user_id = $1
+    AND
+        id = $2
   `,
 };

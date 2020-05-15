@@ -51,6 +51,16 @@ function createCartController({ cartService, axios, PRODUCT_SERVICE_URL }) {
         return next(error);
       }
     },
+    removeItemFromCart: async (req, res, next) => {
+      const userId = req.user.id;
+      const cartItemId = Number(req.params.id);
+      try {
+        await cartService.removeFromCart(userId, cartItemId);
+        return res.status(status.NO_CONTENT).end();
+      } catch (error) {
+        return next(error);
+      }
+    },
   };
 }
 

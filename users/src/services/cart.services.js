@@ -17,6 +17,10 @@ class CartService {
     const cart = await this.db.any(query.getUserCart, [userId]);
     return cart;
   }
+
+  async removeFromCart(userId, cartItemId) {
+    await this.db.none(query.removeItemFromCart, [userId, cartItemId]);
+  }
 }
 
 module.exports = CartService;

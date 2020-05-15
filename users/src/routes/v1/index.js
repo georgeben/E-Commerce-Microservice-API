@@ -4,7 +4,7 @@ const checkAuth = require('../../middlewares/checkAuthorization');
 const usersController = require('../../controllers/user.controller');
 const cartController = require('../../controllers/cart.controller');
 const { createUser, signIn } = require('../../schema/user.schema');
-const { addToCart } = require('../../schema/cart.schema');
+const { addToCart, checkForId } = require('../../schema/cart.schema');
 
 const router = Router();
 
@@ -25,5 +25,6 @@ router.post(
   cartController('addToCart'),
 );
 router.get('/users/cart', checkAuth('authorized'), cartController('getCart'));
+router.delete('/users/cart/:id', validator(checkForId, 'params'), checkAuth('authorized'), cartController('removeItemFromCart'));
 
 module.exports = router;
