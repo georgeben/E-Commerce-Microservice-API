@@ -1,0 +1,27 @@
+version: "3"
+services: 
+  db:
+    image: postgres
+    environment: 
+      POSTGRES_PASSWORD: hello
+      POSTGRES_DB: ecommerce
+    volumes: 
+      - ./pgdata:/var/lib/postgresql/data
+    ports: 
+      - "5432:5432"
+  products:
+    build: "./products"
+    ports: 
+      - "3001:3000"
+    depends_on: 
+      - db
+    environment: 
+      - DEV_DB=postgres://postgres:hello@db:5432/
+  users:
+    build: "./users"
+    ports: 
+      - "3002:3000"
+    depends_on: 
+      - db
+    environment: 
+      - DEV_DB=postgres://postgres:hello@db:5432/
