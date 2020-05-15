@@ -21,7 +21,10 @@ To get detailed information about the project. Read the [technical spec](https:/
 - Clone this repository.
 - `cd` into the repository
 - Run `docker-compose up` (Make sure you have a strong internet connection, LOL)
-- Access the API on `http://localhost:8080` :zap:
+- Access the app on `http://localhost:8080` :zap: 
+
+You should see
+![App](images/app.png)
 
 ### API documentation
 View the API docs [here](https://documenter.getpostman.com/view/5935573/Szmk1bGQ)
