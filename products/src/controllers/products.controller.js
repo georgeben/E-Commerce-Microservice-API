@@ -9,7 +9,7 @@ function createProductController({ productsService }) {
         const product = await productsService.getProductById(id);
         if (!product) {
           return res.status(status.NOT_FOUND).json(
-            { error: 'The product you requested for was not found' },
+            { error: `The product with id #${id} you requested for was not found` },
           );
         }
         return res.status(status.OK).json({

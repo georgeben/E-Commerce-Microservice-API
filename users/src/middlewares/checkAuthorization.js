@@ -29,11 +29,11 @@ function createAuthMiddleware({ userService, authHelper }) {
         switch (error.name) {
           case 'JsonWebTokenError':
             return res.status(status.UNAUTHORIZED).json({
-              error: 'Invalid JWT supplied',
+              error: 'Invalid authorization token supplied',
             });
           case 'TokenExpiredError':
             return res.status(status.UNAUTHORIZED).json({
-              error: 'Expired JWT token supplied.',
+              error: 'Your authentication token has expired. Please login',
             });
           default:
             return next(error);

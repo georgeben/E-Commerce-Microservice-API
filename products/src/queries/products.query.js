@@ -1,7 +1,7 @@
 module.exports = {
   getAllProducts: `
     SELECT 
-        products.*, product_categories.name
+        products.*, product_categories.name as category_name
     FROM 
         products
     INNER JOIN
