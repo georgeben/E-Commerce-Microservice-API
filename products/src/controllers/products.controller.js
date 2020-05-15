@@ -61,6 +61,11 @@ function createProductController({ productsService }) {
       const { id } = req.params;
       try {
         const category = await productsService.getCategory(id);
+        if (!category) {
+          return res.status(status.NOT_FOUND).json({
+            error: 'Product category not found',
+          });
+        }
         return res.status(status.OK).json({
           message: 'Successfully fetched product categories',
           data: category,
