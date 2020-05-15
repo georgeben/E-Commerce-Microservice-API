@@ -1,4 +1,5 @@
 const query = require('../queries/orders.query');
+const { ORDER_STATUSES } = require('../util/constants');
 
 class OrderService {
   constructor({ db }) {
@@ -27,6 +28,11 @@ class OrderService {
     orderId, productId, quantity, subTotal,
   }) {
     await this.db.none(query.createOrderItem, [orderId, productId, quantity, subTotal]);
+  }
+
+  async cancelOrder(userId, orderId) {
+    const result = await this.db.oneOrNone(query.cancelOrder, [ORDER_STATUSES.cancelled, userId, orderId]);
+    return result;
   }
 }
 

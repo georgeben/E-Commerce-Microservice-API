@@ -16,6 +16,11 @@ const makeOrder = Joi.object({
   products: Joi.array().items(orderItems).min(1).required(),
 });
 
+const cancelOrder = Joi.object({
+  orderId: Joi.number().integer().required(),
+});
+
 module.exports = {
   makeOrder,
+  cancelOrder,
 };

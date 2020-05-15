@@ -29,4 +29,15 @@ module.exports = {
         sub_total
       ) VALUES ($1, $2, $3, $4)
   `,
+  cancelOrder: `
+      UPDATE 
+          orders
+      SET
+          order_status = $1
+      WHERE
+          user_id = $2
+      AND
+          id = $3
+      RETURNING id
+  `,
 };

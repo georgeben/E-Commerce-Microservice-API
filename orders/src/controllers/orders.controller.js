@@ -53,6 +53,23 @@ function createOrdersController({ ordersService, axios, PRODUCT_SERVICE_URL }) {
         return next(error);
       }
     },
+    cancelOrder: async (req, res, next) => {
+      const { orderId } = req.body;
+      const userId = req.user.id;
+      try {
+        const cancelledOrder = await ordersService.cancelOrder(userId, orderId);
+        if (!cancelledOrder) {
+          return res.status(status.NOT_FOUND).json({
+            error: 'The order you specified was not found',
+          });
+        }
+        return res.status(status.OK).json({
+          message: 'Successfully cancelled order',
+        });
+      } catch (error) {
+        return next(error);
+      }
+    },
   };
 }
 
